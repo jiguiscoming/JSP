@@ -5,16 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%
-	String id = request.getParameter("id");
-	String pw = request.getParameter("pw");
-
-%>	
 </head>
 <body>
 
-<div>아이디 <p><%=id %></div>
-<div>비밀번호<p><%=pw %></div>
+<div>아이디 : ${info.id }</div>
+<div>비밀번호 : ${info.pw }</div>
+<div>만 나이 : ${info.age } </div>
+<div>file</div>
+<div><img src="filesaver/${info.fName }"></div>
 
 </body>
 </html>

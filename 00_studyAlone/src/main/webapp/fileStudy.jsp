@@ -1,5 +1,3 @@
-<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
-<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,20 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="login.js"></script>
+<script type="text/javascript" src="validCheck.js"></script>
 </head>
 <body>
-<%
-	String path =	request.getSession().getServletContext().getRealPath("filesaver");
-	System.out.println(path);
 
-	MultipartRequest mr = new MultipartRequest(request, path, 20*1024*1024, "utf-8", new DefaultFileRenamePolicy());
+	<h1><a href="C">JS'Home</a></h1>
 	
-	String fName = mr.getFilesystemName("f");
-			
-%>
+	<div><a href="SC">sign</a></div>
+	
+	<div><jsp:include page="${contentPage}"></jsp:include> </div>
 
-file
-<img src="filesaver/<%=fName%>">
-
+	
 </body>
 </html>

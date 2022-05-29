@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<div id="home_title"><h1><a href="C">JS'Home</a></h1></div>
+	<div id="home_title"><a href="C" >JS'Home</a></div>
 	
 	<div class="home_menu"><a href="SC">sign</a></div>
 	

@@ -2,40 +2,46 @@ package com.js.main;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.ResultSet;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class LM {
 
-	public static void get(HttpServletRequest request) {
+	public static void checkAcount(HttpServletRequest request) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String userId = request.getParameter("user_id");
+		String userPw = request.getParameter("user_pw");
+		
 		try {
+			con = DBManager.connect();
 			
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		
-		
-		Connection con = DBManager.connect();
-		
-		String sql = "insert into log values (log_seq.nextval,?,?,?,?)";
-		PreparedStatement pstmt = con.prepareStatement(sql);
-		pstmt.setString(1, name);
-		pstmt.setString(2, age);
-		pstmt.setString(3, id);
-		pstmt.setString(4, pw);
-		
-		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			String sql = "select * from log where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				if (userPw.equals(rs.getString("pw"))) {
+					request.setAttribute("result", "로그인 성공");
+				}else {
+					request.setAttribute("result", "비밀번호 오류");
+				}
+			}else {
+				request.setAttribute("result", "존재하지 않는 회원");
+			}
+			
+			
+		} catch (Exception e) {
 			e.printStackTrace();
+			request.setAttribute("result", "로그인 오류");
 		}
 		
+		
+		DBManager.close(con, pstmt, rs);
 	}
-
-
-	
-	
 
 }

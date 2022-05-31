@@ -8,13 +8,7 @@
 </head>
 <body>
 
-<a href="HC"><h1>HELLO WORLD</h1></a>
-<a href="JC">Join in</a>
-<a href="LC">Login</a>
-<hr>
-<jsp:include page="${contents }"></jsp:include>
-
-
+<h2>${result }</h2>
 
 </body>
 </html>

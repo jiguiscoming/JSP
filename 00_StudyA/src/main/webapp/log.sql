@@ -1,9 +1,8 @@
 create table log(
-	log_no number(3) primary key,
-	name varchar2(20 char),
-	age varchar2 (3 char),
-	id varchar2 (20 char),
-	pw varchar2 (20 char)
+	name varchar2(20 char) not null,
+	age varchar2 (3 char) not null,
+	id varchar2 (20 char) primary key,
+	pw varchar2 (20 char) not null
 );
 
 create sequence log_seq;

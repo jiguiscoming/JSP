@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	name : ${param.name }
 	<br>
 	age : ${param.age }
@@ -14,5 +15,8 @@
 	id : ${param.id }
 	<br>
 	pw : ${param.pw }
+	
+	<h2>${result }</h2>
+
 </body>
 </html>

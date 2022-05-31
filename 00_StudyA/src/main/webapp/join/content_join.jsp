@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="LC">
+<form action="JC" method="post">
 
 	name : <input name="name">
 	<br>
@@ -18,11 +17,8 @@
 	<br>
 	pw : <input name="pw">
 	
-	<button>login</button>
+	<button>join in</button>
 
 </form>
-
-
-
 </body>
 </html>

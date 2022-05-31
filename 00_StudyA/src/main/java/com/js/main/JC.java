@@ -7,19 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/LC")
-public class LC extends HttpServlet {
+@WebServlet("/JC")
+public class JC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			request.setAttribute("contents", "login/content_login.jsp");
+			
+			request.setAttribute("contents", "join/content_join.jsp");
 			request.getRequestDispatcher("first.jsp").forward(request, response);
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LM.checkAcount(request);
-		request.setAttribute("contents", "login/content_loginoutput.jsp");
+		request.setCharacterEncoding("utf-8");
+		JM.get(request);
+		request.setAttribute("contents", "join/content_joinouput.jsp");
 		request.getRequestDispatcher("first.jsp").forward(request, response);
+	
 	}
 
 }

@@ -9,6 +9,7 @@
 <body>
 
 <h2>${result }</h2>
+${session }
 
 </body>
 </html>

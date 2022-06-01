@@ -18,6 +18,7 @@ public class LC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LM.checkAcount(request);
+		LM.continueAccount(request,response);
 		request.setAttribute("contents", "login/content_loginoutput.jsp");
 		request.getRequestDispatcher("first.jsp").forward(request, response);
 	}

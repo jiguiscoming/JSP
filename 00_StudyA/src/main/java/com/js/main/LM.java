@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class LM {
 
@@ -42,6 +44,15 @@ public class LM {
 		
 		
 		DBManager.close(con, pstmt, rs);
+	}
+
+	public static void continueAccount(HttpServletRequest request, HttpServletResponse response) {
+
+		String s = "session is working";
+		HttpSession hs = request.getSession();
+		hs.setMaxInactiveInterval(60);
+		hs.setAttribute("session", s);
+		
 	}
 
 }

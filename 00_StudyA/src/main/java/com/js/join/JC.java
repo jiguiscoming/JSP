@@ -19,7 +19,7 @@ public class JC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		JM.get(request);
+		JM.save(request);
 		request.setAttribute("loginPage", "login/login.jsp");
 		request.setAttribute("contentPage", "join/content_joinouput.jsp");
 		request.getRequestDispatcher("home.jsp").forward(request, response);

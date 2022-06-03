@@ -8,13 +8,13 @@
 </head>
 <body>
 
-	name : ${param.name }
+	name : ${account.name}
 	<br>
-	age : ${param.age }
+	age : ${account.age }
 	<br>
-	id : ${param.id }
+	id : ${account.id }
 	<br>
-	pw : ${param.pw }
+	pw : ${account.pw }
 	
 	<h2>${result }</h2>
 

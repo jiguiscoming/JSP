@@ -1,0 +1,43 @@
+@charset "UTF-8";
+body{
+	margin:0px;
+	padding: 0px;
+	
+}
+
+#home_title{
+	width: 100vw;
+	height: 300px;
+	background-image: url("../75D93B4D-BF24-4562-8234-24F014EC3AC2.jpeg");
+	position: relative;
+	text-align: center;
+}
+#home_title>a{
+	text-decoration: none;
+	font-size: 20pt;	
+	color:white;
+position: absolute;
+top: 100px;
+}
+
+
+.home_menu{
+	width: 100vw;
+	height: 100px;
+	text-align: center;
+	
+	
+}
+
+.home_menu>a{
+	text-decoration: none;
+	font-size: 13pt;
+	color: black;
+}
+
+
+.home_content{
+	width:100vw;
+	height:500px;
+	border: 1px solid blue;
+}

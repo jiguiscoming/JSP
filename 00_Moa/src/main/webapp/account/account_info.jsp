@@ -8,5 +8,8 @@
 </head>
 <body>
 
+${sessionScope.account.name }님
+
+
 </body>
 </html>

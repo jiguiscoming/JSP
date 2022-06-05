@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AccountController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		if (request.getParameter("account") == "login") {
+		if (request.getParameter("account").equals("login")) {
 			request.setAttribute("content_page", "account/login.jsp");
 		}else {
 			request.setAttribute("content_page", "account/join.jsp");
@@ -21,6 +21,12 @@ public class AccountController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		AccountDAO.accountCheck(request);
+		request.setAttribute("content_page", "home.jsp");
+		request.getRequestDispatcher("main.jsp").forward(request, response);
+	
+	
 	}
 
 }

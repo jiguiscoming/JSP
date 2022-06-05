@@ -10,7 +10,7 @@
 <body>
 
 <div>
-	<div>Moa</div>
+	<div><a href="HomeController">Moa</a></div>
 	<c:choose>
 		<c:when test="${empty param.id}">
 			<form action="AccountController">

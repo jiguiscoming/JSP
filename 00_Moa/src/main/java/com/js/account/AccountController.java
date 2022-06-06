@@ -21,8 +21,13 @@ public class AccountController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		AccountDAO.accountCheck(request);
+		request.setCharacterEncoding("utf-8");
+		
+		if (request.getParameter("name")!=null) {
+			AccountDAO.accountReg(request);
+		}else {
+			AccountDAO.accountCheck(request);
+		}
 		request.setAttribute("content_page", "home.jsp");
 		request.getRequestDispatcher("main.jsp").forward(request, response);
 	

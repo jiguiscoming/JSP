@@ -25,4 +25,8 @@ insert into account values(
 );
 
 
-select * from account where account_id='test';
+select * from account;
+
+create table account_test(
+
+);

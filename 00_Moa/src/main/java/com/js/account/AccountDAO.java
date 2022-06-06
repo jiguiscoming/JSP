@@ -55,4 +55,47 @@ public class AccountDAO {
 		
 	}
 
+	public static void accountReg(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		String name = request.getParameter("name");
+		int byear =	Integer.parseInt(request.getParameter("byear"));
+		int bmonth = Integer.parseInt(request.getParameter("bmonth"));
+		int bday =	Integer.parseInt(request.getParameter("bday"));
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String pwCheck = request.getParameter("pw_check");
+		String gender = request.getParameter("gender");
+		String addr = request.getParameter("addr");
+		String phone = request.getParameter("phone");
+		
+		try {
+			String sql = "insert into account values (?,?,?,?,?,?,?,?,?,?)";
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, name);
+			pstmt.setInt(2, byear);
+			pstmt.setInt(3, bmonth);
+			pstmt.setInt(4, bday);
+			pstmt.setString(5, id);
+			pstmt.setString(6, pw);
+			pstmt.setString(7, pwCheck);
+			pstmt.setString(8, gender);
+			pstmt.setString(9, addr);
+			pstmt.setString(10, phone);
+			
+			if (pstmt.executeUpdate() == 1) {
+				request.setAttribute("result", "회원가입 성공");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("result", "서버 오류");
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+	}
+
 }

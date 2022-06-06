@@ -8,7 +8,6 @@
 <title>Moa</title>
 </head>
 <body>
-
 <div>
 	<div><a href="HomeController">Moa</a></div>
 	<c:choose>
@@ -33,7 +32,7 @@
 	<div>커뮤니티</div>
 	<div>음악</div>
 </div>
-
+<hr>
 <div> <jsp:include page="${content_page}"></jsp:include> </div>
 
 

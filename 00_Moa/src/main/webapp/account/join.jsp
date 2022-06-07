@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="AccountController" method="post">
+<form action="AccountController" name="joinForm" onsubmit="return joinValid()" method="post">
 	<h3>이름</h3><span><input name="name"></span> 
 	<h3>생년월일</h3> 
 	<span>

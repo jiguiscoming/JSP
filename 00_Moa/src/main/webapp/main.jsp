@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Moa</title>
+<script type="text/javascript" src="js/joinCheck.js"></script>
+<script type="text/javascript" src="js/accountValidCheck.js"></script>
 </head>
 <body>
 <div>

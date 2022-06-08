@@ -28,8 +28,8 @@
 	</select>
 	<input name="bday" placeholder="일" maxlength="2">
 	</span>
-	<h3>아이디</h3> <span><input name="id"></span>
-	<h3>비밀번호</h3> <span><input name="pw"></span>
+	<h3>아이디</h3> <span><input name="id" maxlength="20"></span>
+	<h3>비밀번호</h3> <span><input name="pw" maxlength="16"></span>
 	<h3>비밀번호 확인</h3> <span><input name="pw_check"></span> 
 	<h3>이메일</h3> <span><input name="email"></span>
 	<h3>성별</h3> 
@@ -52,7 +52,7 @@
 	</select>
 	</span>
 	<h3>전화번호</h3>	
-	<span><input name="phone" placeholder="-포함"></span>
+	<span><input name="phone"></span>
 	
 	<div><button>회원가입</button></div>
 </form>

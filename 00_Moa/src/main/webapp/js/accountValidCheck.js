@@ -20,11 +20,11 @@ function lessThan(input, length){
 
 /*반드시 포함(포함 안되면 true)*/
 function contain(input, set){
-	for(i=0; i<set.length; i++){
+	for(let i = 0; i < set.length; i++){
 		if(input.value.indexOf(set[i]) != -1){
-			return true;
+			return false;
 		}
-	}return false;
+	}return true;
 }
 
 

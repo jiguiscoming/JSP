@@ -47,11 +47,11 @@ function joinValid(){
 	}
 	
 	/*아이디 : 5~20 영문 소문자 숫자*/
-/*	if(lessThan(id, 5) || contain(id, "qwertyuiopasdfghjklzxcvbnm") || contain(id, "1234567890")){
+	if(lessThan(id, 5) || contain(id, "qwertyuiopasdfghjklzxcvbnm") || contain(id, "1234567890")){
 		alert('아이디는 5~20자 영문 소문자, 숫자 포함');
 		id.focus();
 		return false;
-	}*/
+	}
 		
 	/*비밀번호 : 필수*/
 	if(mustInput(pw)){
@@ -59,12 +59,14 @@ function joinValid(){
 		pw.focus();
 		return false;
 	}
+	
 	/*비밀번호 : 8~16 영문 대소문자 숫자 특수문자*/
-/*	if(lessThan(pw, 8) || contain(pw, "qwertyuiopasdfghjklzxcvbnm" || contain(pw, "QWERTYUIOPASDFGHJKLZXCVBNM") || contain(pw, "~!@#$%^&*") || contain(pw, "1234567890"))){
+	if(lessThan(pw, 8) || contain(pw, "qwertyuiopasdfghjklzxcvbnm" || contain(pw, "QWERTYUIOPASDFGHJKLZXCVBNM") || contain(pw, "~!@#$%^&*") || contain(pw, "1234567890"))){
 		alert('비밀번호 8~16자 영문 대소문자, 숫자, 특수문자 포함');
 		pw.focus();
 		return false;
-	}*/
+	}
+	
 	/*비밀번호 확인 : 필수입력*/
 	if(mustInput(pw_check)){
 		alert('비밀번호를 입력하세요');
@@ -73,7 +75,7 @@ function joinValid(){
 	}
 	/*비밀번호 재확인*/
 	if(pwCheck(pw,pw_check)){
-		alert('비밀번호를 확인하세요');
+		alert('비밀번호가 일치하지 않습니다');
 		pw_check.focus();
 		return false;
 	}

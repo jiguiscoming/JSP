@@ -30,12 +30,21 @@ public class AccountDAO {
 			
 			Account a = null;
 			if(rs.next()) {
-				if(userPw.equals(rs.getString("account_pw"))) {
+				
+				String name = rs.getString("account_name");
+				int byear = Integer.parseInt(rs.getString("account_byear"));
+				int bmonth =Integer.parseInt(rs.getString("account_bmonth"));
+				int bday = Integer.parseInt(rs.getString("account_bday"));
+				String id = rs.getString("account_id");
+				String pw = rs.getString("account_pw");
+				String email = rs.getString("account_email");
+				String gender = rs.getString("account_gender");
+				String addr = rs.getString("account_addr");
+				String phone = rs.getString("account_phone");
+				
+				if(userPw.equals(pw)) {
 					request.setAttribute("result", "로그인 성공");
-					a = new Account();
-					a.setName(rs.getString("account_name"));
-					a.setId(userId);
-					a.setPw(userPw);
+					a = new Account(name, byear, bmonth, bday, id, pw, email, gender, addr, phone);
 					HttpSession hs = request.getSession();
 					hs.setAttribute("account", a);
 				}else {
@@ -66,6 +75,7 @@ public class AccountDAO {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String pwCheck = request.getParameter("pw_check");
+		String email = request.getParameter("email");
 		String gender = request.getParameter("gender");
 		String addr = request.getParameter("addr");
 		String phone = request.getParameter("phone");
@@ -81,13 +91,18 @@ public class AccountDAO {
 			pstmt.setInt(4, bday);
 			pstmt.setString(5, id);
 			pstmt.setString(6, pw);
-			pstmt.setString(7, pwCheck);
+			pstmt.setString(7, email);
 			pstmt.setString(8, gender);
 			pstmt.setString(9, addr);
 			pstmt.setString(10, phone);
 			
+			Account a = null;
+			
 			if (pstmt.executeUpdate() == 1) {
 				request.setAttribute("result", "회원가입 성공");
+				a = new Account(name, byear, bmonth, bday, id, pw, email, gender, addr, phone);
+				HttpSession hs = request.getSession();
+				hs.setAttribute("account", a);
 			}
 			
 		} catch (Exception e) {

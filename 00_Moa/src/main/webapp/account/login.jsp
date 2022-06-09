@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="AccountController" method="post">
+<form action="AccountController" method="post" name="loginForm" onsubmit="return loginValid()">
 	<div>
 		<div>	
 			id <input name="id">

@@ -39,28 +39,34 @@
 	<div class="research"><span>검색창</span> <input name="research"></div>
 </div>
 
-<div class="menu_bar">
-	<ul class="menu_content">
-		<li class="menu_country">국가별</li>
-			<ul class="menu_s">
-				<li>한국</li>
-				<li>중국</li>
-				<li>일본</li>
-				<li>미국</li>
-				<li>영국</li>
-				<li>유럽</li>
-				<li>동남아시아</li>
-			</ul>
-		<li class="menu_genre">장르별</li>
-			<ul class="menu_s">
-				<li>로맨스</li>
-				<li>코미디</li>
-				<li>드라마</li>
-				<li>스릴러</li>
-			</ul>
-		<li class="menu_comunity">커뮤니티</li>
-		<li class="menu_music">음악</li>
-	</ul>
+<div class="menu">
+		<div class="menu_content">
+		<span><a href="#">국가별</a></span>
+			<div class="menu_s">
+				<a href="#">한국</a>
+				<a href="#">중국</a>
+				<a href="#">일본</a>
+				<a href="#">미국</a>
+				<a href="#">영국</a>
+				<a href="#">유럽</a>
+				<a href="#">동남아시아</a>
+			</div>
+		</div>
+		<div class="menu_content">
+		<span><a href="#">장르별</a></span>
+			<div class="menu_s">
+				<a href="#">로맨스</a>
+				<a href="#">코미디</a>
+				<a href="#">드라마</a>
+				<a href="#">스릴러</a>
+			</div>
+		</div>
+		<div class="menu_content">
+		<span><a href="#">커뮤니티</a></span>
+		</div>
+		<div class="menu_content">
+		<span><a href="#">음악</a></span>
+		</div>
 </div>
 <hr>
 <div class="content_box"> <jsp:include page="${content_page}"></jsp:include> </div>

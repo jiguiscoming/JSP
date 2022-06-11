@@ -13,8 +13,14 @@ public class AccountController extends HttpServlet {
 	
 		if (request.getParameter("account").equals("login")) {
 			request.setAttribute("content_page", "account/login.jsp");
-		}else {
+		}else if(request.getParameter("account").equals("join")){
 			request.setAttribute("content_page", "account/join.jsp");
+		}else if(request.getParameter("account").equals("logout")){
+			AccountDAO.deleteAccount(request);
+			request.setAttribute("content_page", "home.jsp");
+		}else {
+			AccountDAO.getAccount(request);
+			request.setAttribute("content_page", "account/mypage.jsp");
 		}
 		request.getRequestDispatcher("main.jsp").forward(request, response);
 		

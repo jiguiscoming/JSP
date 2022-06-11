@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 import com.js.main.DBManager;
 
 public class AccountDAO {
+	
+	
 
 	public static void accountCheck(HttpServletRequest request) {
 		
@@ -44,8 +46,11 @@ public class AccountDAO {
 				
 				if(userPw.equals(pw)) {
 					request.setAttribute("result", "로그인 성공");
+//					bean에 넣어줌
 					a = new Account(name, byear, bmonth, bday, id, pw, email, gender, addr, phone);
+//					세션 넣음
 					HttpSession hs = request.getSession();
+					hs.setMaxInactiveInterval(60*2);
 					hs.setAttribute("account", a);
 				}else {
 					request.setAttribute("result", "비밀번호 오류");
@@ -101,7 +106,9 @@ public class AccountDAO {
 			if (pstmt.executeUpdate() == 1) {
 				request.setAttribute("result", "회원가입 성공");
 				a = new Account(name, byear, bmonth, bday, id, pw, email, gender, addr, phone);
+//				세션 넣어줌
 				HttpSession hs = request.getSession();
+				hs.setMaxInactiveInterval(60*2);
 				hs.setAttribute("account", a);
 			}
 			
@@ -112,5 +119,21 @@ public class AccountDAO {
 			DBManager.close(con, pstmt, null);
 		}
 	}
+
+	public static void deleteAccount(HttpServletRequest request) {
+		HttpSession hs = request.getSession();
+		hs.removeAttribute("account");
+		
+	}
+
+	public static void getAccount(HttpServletRequest request) {
+		HttpSession hs = request.getSession();
+		hs.setAttribute("account", hs);
+	}
+	
+	
+	
+	
+	
 
 }

@@ -27,28 +27,27 @@
 	font-weight: bold;
 }
 
-.login{
+.login, .logout{
 	width: 100px;
 	hegiht: 100px; 
 	position: absolute;
 	top: 20px;
 	right: 100px;
 }
-
-.login_btn{
-	
-}
-
-.join{
+.join, .mypage{
 	width: 100px;
 	hegiht: 100px; 
 	position: absolute;
 	top: 20px;
-	right: 200px;
+	right: 20px;
 }
 
-.join_btn{
-	
+
+
+.login_btn, .join_btn, .logout_btn, .mypage_btn{
+	border: 2px solid white;
+	background-color: black;
+	color: white; 
 }
 
 .research{

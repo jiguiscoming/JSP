@@ -15,7 +15,7 @@
 <div id = "title_box">
 	<div class="title"><a href="HomeController">Moa</a></div>
 	<c:choose>
-		<c:when test="${empty param.id}">
+		<c:when test="${empty sessionScope.account.id}">
 		<div class="login">
 			<form action="AccountController">
 				<button class="login_btn" name="account" value="login">로그인</button>
@@ -28,7 +28,11 @@
 		</div>
 		</c:when>
 		<c:otherwise>
-			<div class="account_info"><jsp:include page="account/account_info.jsp"></jsp:include> </div>
+			<div class="mypage">
+				<form action="AccountController">
+				<button class="mypage_btn" name="account" value="mypage" >마이페이지</button>
+				</form>
+			</div>
 			<div class="logout">
 				<form action="AccountController">
 					<button class="logout_btn" name="account" value="logout">로그아웃</button>

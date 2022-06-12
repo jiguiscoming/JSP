@@ -27,19 +27,21 @@
 	font-weight: bold;
 }
 
-.login, .logout{
-	width: 100px;
-	hegiht: 100px; 
+.login_content{
 	position: absolute;
 	top: 20px;
-	right: 100px;
+	right:100px;
+	width: 200px;
+	height: 100px;
 }
-.join, .mypage{
-	width: 100px;
-	hegiht: 100px; 
-	position: absolute;
-	top: 20px;
-	right: 20px;
+
+.login, .join{
+	float:left;
+	margin: 10px;
+}
+.mypage, .logout{
+	float:left;
+	margin: 10px;
 }
 
 

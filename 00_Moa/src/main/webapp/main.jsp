@@ -9,37 +9,13 @@
 <link rel="stylesheet" href="css/main.css">
 <script type="text/javascript" src="js/joinCheck.js"></script>
 <script type="text/javascript" src="js/loginCheck.js"></script>
+<script type="text/javascript" src="js/mypage.js"></script>
 <script type="text/javascript" src="js/accountValidCheck.js"></script>
 </head>
 <body>
 <div id = "title_box">
 	<div class="title"><a href="HomeController">Moa</a></div>
-	<c:choose>
-		<c:when test="${empty sessionScope.account.id}">
-		<div class="login">
-			<form action="AccountController">
-				<button class="login_btn" name="account" value="login">로그인</button>
-			</form>
-		</div>
-		<div class="join">
-			<form action="AccountController">
-				<button class="join_btn" name="account" value="join">회원가입</button>
-			</form>
-		</div>
-		</c:when>
-		<c:otherwise>
-			<div class="mypage">
-				<form action="AccountController">
-				<button class="mypage_btn" name="account" value="mypage" >마이페이지</button>
-				</form>
-			</div>
-			<div class="logout">
-				<form action="AccountController">
-					<button class="logout_btn" name="account" value="logout">로그아웃</button>
-				</form>
-			</div>
-		</c:otherwise>
-	</c:choose>
+	<div class="login_content"><jsp:include page="${login_page }"></jsp:include></div>
 	<div class="research"><span>검색창</span> <input name="research"></div>
 </div>
 

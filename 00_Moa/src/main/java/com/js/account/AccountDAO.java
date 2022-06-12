@@ -11,6 +11,18 @@ import com.js.main.DBManager;
 
 public class AccountDAO {
 	
+	public static void loginCheck(HttpServletRequest request) {
+		HttpSession hs = request.getSession();
+		Account a = (Account)hs.getAttribute("account");
+	
+		if (a == null) {
+			request.setAttribute("login_page", "account/before_login.jsp");
+		} else {
+			request.setAttribute("login_page", "account/after_login.jsp");
+		}
+	
+	}
+	
 	
 
 	public static void accountCheck(HttpServletRequest request) {
@@ -126,13 +138,6 @@ public class AccountDAO {
 		
 	}
 
-	public static void getAccount(HttpServletRequest request) {
-		HttpSession hs = request.getSession();
-		hs.setAttribute("account", hs);
-	}
-	
-	
-	
 	
 	
 

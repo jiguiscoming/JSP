@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="AccountController" method="post" name="mypageForm" onsubmit="return mypageValid()">
-		비밀번호 확인
-		<input name="pwCheck">
-		<button>입력</button>
-	</form>
+mypage
 </body>
 </html>

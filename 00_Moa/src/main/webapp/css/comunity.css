@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+#img_box{
+	border: 1px solid green;
+	width: 100vw;
+	height:300px;
+}
+.img_content{
+	border: 1px solid green;
+	float: left;
+	width: 200px;
+	height: 90%;
+	margin: 10px;
+}

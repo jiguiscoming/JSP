@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Moa</title>
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/comunity.css">
 <script type="text/javascript" src="js/joinCheck.js"></script>
 <script type="text/javascript" src="js/loginCheck.js"></script>
 <script type="text/javascript" src="js/mypage.js"></script>
@@ -42,7 +43,7 @@
 			</div>
 		</div>
 		<div class="menu_content">
-		<span><a href="#">커뮤니티</a></span>
+		<span><a href="ComunityController">커뮤니티</a></span>
 		</div>
 		<div class="menu_content">
 		<span><a href="#">음악</a></span>

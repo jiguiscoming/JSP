@@ -8,6 +8,7 @@
 <title>Moa</title>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/comunity.css">
+<link rel="stylesheet" href="css/home.css">
 <script type="text/javascript" src="js/joinCheck.js"></script>
 <script type="text/javascript" src="js/loginCheck.js"></script>
 <script type="text/javascript" src="js/mypage.js"></script>

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+#best_box{
+	border: 1px solid black;
+	width: 100vw;
+	height: 250px;
+}
+
+#best_box>div{
+	float: left;
+	width: 100px;
+	height: 200px;
+}
+
+#rmd_box{
+	border: 1px solid black;
+	width: 100vw;
+	height: 250px;
+	
+}
+#rmd_box>div{
+	float: left;
+	width: 100px;
+	height: 200px;
+}
+
+#watching_box{
+	border: 1px solid black;
+	width: 100vw;
+	height: 250px;
+}
+
+#watching_box>div{
+	float: left;
+	width: 100px;
+	height: 200px;
+	
+}

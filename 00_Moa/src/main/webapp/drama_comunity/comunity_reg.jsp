@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>mypage</title>
+<title>Insert title here</title>
 </head>
 <body>
-mypage
+
+<div>title</div>
+<div><textarea name="title"></textarea></div>
+
+<div>txt</div>
+<div><textarea name="review"></textarea></div>
+
+
+
+
+
 </body>
 </html>
